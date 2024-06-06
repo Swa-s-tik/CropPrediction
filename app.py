@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import seaborn as sns
+#import seaborn as sns
 import matplotlib.pyplot as plt
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_squared_error
@@ -14,12 +14,12 @@ def load_data():
     return pd.read_csv(file_path)
 
 # Function to plot the heatmap
-def plot_heatmap(data):
-    numeric_columns = data.select_dtypes(include=[np.number])
-    correlation_matrix = numeric_columns.corr()
-    plt.figure(figsize=(12, 8))
-    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
-    st.pyplot(plt.gcf())
+#def plot_heatmap(data):
+ #   numeric_columns = data.select_dtypes(include=[np.number])
+  #  correlation_matrix = numeric_columns.corr()
+   # plt.figure(figsize=(12, 8))
+    #sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
+    #st.pyplot(plt.gcf())
 
 # Function to plot production trends
 def plot_production_trends(data, crop, state):
