@@ -101,8 +101,8 @@ def main():
     st.subheader("Dataset")
     st.write(data.head())
 
-    st.subheader("Correlation Heatmap")
-    plot_heatmap(data)
+    #st.subheader("Correlation Heatmap")
+    #plot_heatmap(data)
 
     st.subheader("Production Trends")
     crop = st.selectbox("Select Crop", data['Crop'].unique())
