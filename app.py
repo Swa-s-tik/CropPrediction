@@ -95,6 +95,7 @@ def forecast_production(data, crop, state):
 
 # Main function for the Streamlit app
 def main():
+    image_file = 'background.avif'
     st.title("Crop Production Analysis and Forecasting")
     
     data = load_data()
