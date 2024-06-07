@@ -13,7 +13,7 @@ def load_data():
     file_path = "https://raw.githubusercontent.com/Swa-s-tik/CropPrediction/main/crop_yield.csv"
     return pd.read_csv(file_path)
 
-#Function to plot the heatmap
+# Function to plot the heatmap
 def plot_heatmap(data):
     numeric_columns = data.select_dtypes(include=[np.number])
     correlation_matrix = numeric_columns.corr()
@@ -98,8 +98,8 @@ def main():
     # Add background image CSS
     page_bg_img = '''
     <style>
-    body {
-        background-image: url("https://images.unsplash.com/photo-1717328499550-e6addc3def8b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D");
+    .stApp {
+        background: url("https://github.com/Swa-s-tik/CropPrediction/blob/main/bg.jpg");
         background-size: cover;
     }
     </style>
