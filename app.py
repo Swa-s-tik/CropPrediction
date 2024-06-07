@@ -95,7 +95,18 @@ def forecast_production(data, crop, state):
 
 # Main function for the Streamlit app
 def main():
-    image_file = 'background.avif'
+    # Add background image CSS
+    page_bg_img = '''
+    <style>
+    body {
+        background-image: url("https://images.unsplash.com/photo-1717328499550-e6addc3def8b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D");
+        background-size: cover;
+    }
+    </style>
+    '''
+
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
     st.title("Crop Production Analysis and Forecasting")
     
     data = load_data()
