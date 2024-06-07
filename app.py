@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_squared_error
@@ -9,20 +10,15 @@ import itertools
 # Function to load the data
 @st.cache_data
 def load_data():
-    file_path = r'C:\Users\swastik\Desktop\crop_pred\crop_yield.csv'
+    file_path = "https://raw.githubusercontent.com/Swa-s-tik/CropPrediction/main/crop_yield.csv"
     return pd.read_csv(file_path)
 
-# Function to plot the heatmap
+#Function to plot the heatmap
 def plot_heatmap(data):
     numeric_columns = data.select_dtypes(include=[np.number])
     correlation_matrix = numeric_columns.corr()
     plt.figure(figsize=(12, 8))
-    plt.imshow(correlation_matrix, cmap='coolwarm', interpolation='nearest')
-    plt.colorbar()
-    plt.title('Correlation Heatmap')
-    plt.xticks(range(len(correlation_matrix.columns)), correlation_matrix.columns, rotation='vertical')
-    plt.yticks(range(len(correlation_matrix.columns)), correlation_matrix.columns)
-    plt.show()
+    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
     st.pyplot(plt.gcf())
 
 # Function to plot production trends
@@ -35,7 +31,6 @@ def plot_production_trends(data, crop, state):
     plt.xlabel('Year')
     plt.ylabel('Production (in metric tons)')
     plt.grid(True)
-    plt.show()
     st.pyplot(plt.gcf())
 
 # Function to find the best ARIMA parameters
@@ -94,7 +89,6 @@ def forecast_production(data, crop, state):
     plt.ylabel('Production (in metric tons)')
     plt.legend()
     plt.grid(True)
-    plt.show()
     st.pyplot(plt.gcf())
 
     st.write(f'RMSE: {rmse}')
