@@ -14,7 +14,7 @@ from tensorflow.keras.regularizers import l2
 # Function to load the data
 @st.cache_data
 def load_data():
-    file_path = r'C:\Users\swastik\Desktop\crop_pred\crop_yield.csv'
+    file_path = 'crop_yield.csv'
     return pd.read_csv(file_path)
 
 # Function to plot the heatmap
