@@ -4,4 +4,4 @@ numpy
 matplotlib
 seaborn
 scikit-learn
-tensorflow
+tensorflow-cpu
